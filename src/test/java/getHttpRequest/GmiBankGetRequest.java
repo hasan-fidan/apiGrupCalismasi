@@ -36,10 +36,13 @@ public class GmiBankGetRequest extends GmiBankBaseUrl {
         spec.pathParams("parametre1","api","parametre2","tp-customers","parametre3",43703);
 
 
+/*******************************************************EXPECTED DATA OLUSTURDUK********************************************************************/
+
         GmiBankTestData expectedDataObje = new GmiBankTestData();
 
         HashMap<String,Object> expectedDataMap = expectedDataObje.expectedDataSetup();
 
+/*******************************************************REQUEST OLUSTURDUK**************************************************************************/
 
         Response response = RestAssured.given().
                             contentType(ContentType.JSON).
