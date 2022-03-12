@@ -5,15 +5,12 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
 import testData.GmiBankTestData;
-
 import java.util.HashMap;
-import java.util.regex.Matcher;
-
 import static org.hamcrest.Matchers.equalTo;
+
 
 public class GmiBankGetRequest extends GmiBankBaseUrl {
     /*
@@ -54,7 +51,7 @@ public class GmiBankGetRequest extends GmiBankBaseUrl {
         response.prettyPrint();
 
 
-/*******************************************************MATCHERS CLASS ILE*****************************************************************************/
+/*******************************************************MATCHERS CLASS ILE************************************************************************/
 
         response.then().assertThat().body("firstName", equalTo(expectedDataMap.get("firstName")) ,
                                             "lastName",equalTo(expectedDataMap.get("lastName")),
@@ -71,35 +68,30 @@ public class GmiBankGetRequest extends GmiBankBaseUrl {
 
         JsonPath jsonPath = response.jsonPath();
 
-
-            Assert.assertEquals(expectedDataMap.get("firstName"), jsonPath.getString("firstName"));
-            Assert.assertEquals(expectedDataMap.get("lastName"), jsonPath.getString("lastName"));
-            Assert.assertEquals(expectedDataMap.get("middleInitial"), jsonPath.getString("middleInitial"));
-            Assert.assertEquals(expectedDataMap.get("email"), jsonPath.getString("email"));
-            Assert.assertEquals(expectedDataMap.get("mobilePhoneNumber"), jsonPath.getString("mobilePhoneNumber"));
-            Assert.assertEquals(expectedDataMap.get("city"), jsonPath.getString("city"));
-            Assert.assertEquals(expectedDataMap.get("ssn"), jsonPath.getString("ssn"));
-
+            Assert.assertEquals(   expectedDataMap.get("firstName"), jsonPath.getString("firstName"));
+            Assert.assertEquals(   expectedDataMap.get("lastName"), jsonPath.getString("lastName"));
+            Assert.assertEquals(   expectedDataMap.get("middleInitial"), jsonPath.getString("middleInitial"));
+            Assert.assertEquals(   expectedDataMap.get("email"), jsonPath.getString("email"));
+            Assert.assertEquals(   expectedDataMap.get("mobilePhoneNumber"), jsonPath.getString("mobilePhoneNumber"));
+            Assert.assertEquals(   expectedDataMap.get("city"), jsonPath.getString("city"));
+            Assert.assertEquals(   expectedDataMap.get("ssn"), jsonPath.getString("ssn"));
 
 
 
-/******************************************************* De-Serialization *****************************************************************************/
+
+/******************************************************* De-Serialization ***********************************************************************/
                                 /**Json formatindaki datayi java formatina cevirmes islemine denir.*/
 
 
         HashMap<String,Object> actualDataMap = response.as(HashMap.class); /** Bu isleme De-Serialization deniliyor. */
 
-            Assert.assertEquals(expectedDataMap.get("firstName"),actualDataMap.get("firstName"));
-            Assert.assertEquals(expectedDataMap.get("lastName"),actualDataMap.get("lastName"));
-            Assert.assertEquals(expectedDataMap.get("middleInitial"),actualDataMap.get("middleInitial"));
-            Assert.assertEquals(expectedDataMap.get("email"),actualDataMap.get("email"));
-            Assert.assertEquals(expectedDataMap.get("mobilePhoneNumber"),actualDataMap.get("mobilePhoneNumber"));
-            Assert.assertEquals(expectedDataMap.get("city"),actualDataMap.get("city"));
-            Assert.assertEquals(expectedDataMap.get("ssn"),actualDataMap.get("ssn"));
-
-
-
-
+            Assert.assertEquals(   expectedDataMap.get("firstName"),actualDataMap.get("firstName"));
+            Assert.assertEquals(   expectedDataMap.get("lastName"),actualDataMap.get("lastName"));
+            Assert.assertEquals(   expectedDataMap.get("middleInitial"),actualDataMap.get("middleInitial"));
+            Assert.assertEquals(   expectedDataMap.get("email"),actualDataMap.get("email"));
+            Assert.assertEquals(   expectedDataMap.get("mobilePhoneNumber"),actualDataMap.get("mobilePhoneNumber"));
+            Assert.assertEquals(   expectedDataMap.get("city"),actualDataMap.get("city"));
+            Assert.assertEquals(   expectedDataMap.get("ssn"),actualDataMap.get("ssn"));
 
 
 
