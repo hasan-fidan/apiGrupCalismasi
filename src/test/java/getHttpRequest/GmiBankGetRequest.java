@@ -5,15 +5,18 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import junit.extensions.RepeatedTest;
 import org.junit.Assert;
 import org.junit.Test;
 import testData.GmiBankTestData;
+
+import java.lang.annotation.Repeatable;
 import java.util.HashMap;
 import static org.hamcrest.Matchers.equalTo;
 
 
 public class GmiBankGetRequest extends GmiBankBaseUrl {
-    /*
+    /**
            http://www.gmibank.com/api/tp-customers/43703
 
            "firstName": "Alda",
@@ -51,7 +54,7 @@ public class GmiBankGetRequest extends GmiBankBaseUrl {
                             get("/{parametre1}/{parametre2}/{parametre3}");
 
 
-        response.prettyPrint();
+       /** response.prettyPrint();
 
 
 /*******************************************************MATCHERS CLASS ILE************************************************************************/
@@ -71,13 +74,13 @@ public class GmiBankGetRequest extends GmiBankBaseUrl {
 
         JsonPath jsonPath = response.jsonPath();
 
-            Assert.assertEquals(   expectedDataMap.get("firstName"),            jsonPath.getString("firstName"));
-            Assert.assertEquals(   expectedDataMap.get("lastName"),             jsonPath.getString("lastName"));
-            Assert.assertEquals(   expectedDataMap.get("middleInitial"),        jsonPath.getString("middleInitial"));
-            Assert.assertEquals(   expectedDataMap.get("email"),                jsonPath.getString("email"));
-            Assert.assertEquals(   expectedDataMap.get("mobilePhoneNumber"),    jsonPath.getString("mobilePhoneNumber"));
-            Assert.assertEquals(   expectedDataMap.get("city"),                 jsonPath.getString("city"));
-            Assert.assertEquals(   expectedDataMap.get("ssn"),                  jsonPath.getString("ssn"));
+            Assert.assertEquals(   expectedDataMap.get("firstName"),         jsonPath.getString("firstName")            );
+            Assert.assertEquals(   expectedDataMap.get("lastName"),          jsonPath.getString("lastName")             );
+            Assert.assertEquals(   expectedDataMap.get("middleInitial"),     jsonPath.getString("middleInitial")        );
+            Assert.assertEquals(   expectedDataMap.get("email"),             jsonPath.getString("email")                );
+            Assert.assertEquals(   expectedDataMap.get("mobilePhoneNumber"), jsonPath.getString("mobilePhoneNumber")    );
+            Assert.assertEquals(   expectedDataMap.get("city"),              jsonPath.getString("city")                 );
+            Assert.assertEquals(   expectedDataMap.get("ssn"),               jsonPath.getString("ssn")                  );
 
 
 
