@@ -4,51 +4,22 @@ public class HerOkuPojo {
 
     /**
      * { "firstname": "Ali",
-     "lastname": "Can",
-     "totalprice": 500,
-     "depositpaid": true,
-     "bookingdates": {
-     "checkin": "2022-03-01",
-     "checkout": "2022-03-11"
-     }
-     }*/
+     * "lastname": "Can",
+     * "totalprice": 500,
+     * "depositpaid": true,
+     * "bookingdates": {
+     * "checkin": "2022-03-01",
+     * "checkout": "2022-03-11"
+     * }
+     * }
+     */
 
 
-  private String firstname;
-  private String lastname;
-  private int totalprice;
-  private boolean depositpaid;
-  private BookinDatesPojo bookingdates;
-
-
-
-  /** getter ve setter methodlari */
-
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-
-    public String getLastname() {
-        return lastname;
-    }
-
-
-    public int getTotalprice() {
-        return totalprice;
-    }
-
-
-    public boolean isDepositpaid() {
-        return depositpaid;
-    }
-
-
-    public BookinDatesPojo getBookingdates() {
-        return bookingdates;
-    }
-
+    private String firstname;
+    private String lastname;
+    private int totalprice;
+    private boolean depositpaid;
+    private BookinDatesPojo bookingdates;
 
 
     public HerOkuPojo(String firstname, String lastname, int totalprice, boolean depositpaid, BookinDatesPojo bookingdates) {
@@ -63,6 +34,31 @@ public class HerOkuPojo {
     public HerOkuPojo() {
     }
 
+    /**
+     * getter ve setter methodlari
+     */
+
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public int getTotalprice() {
+        return totalprice;
+    }
+
+    public boolean isDepositpaid() {
+        return depositpaid;
+    }
+
+    public BookinDatesPojo getBookingdates() {
+        return bookingdates;
+    }
+
     @Override
     public String toString() {
         return "HerOkuPojo{" +
@@ -73,8 +69,6 @@ public class HerOkuPojo {
                 ", bookingdates=" + bookingdates +
                 '}';
     }
-
-
 
 
 }

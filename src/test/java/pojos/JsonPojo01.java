@@ -5,17 +5,27 @@ public class JsonPojo01 {
 
     /**
      * {
-     "userId": 1,
-     "id": 3,
-     "title": "fugiat veniam minus",
-     "completed": false
-     }
+     * "userId": 1,
+     * "id": 3,
+     * "title": "fugiat veniam minus",
+     * "completed": false
+     * }
      */
 
-      private int userId;
-      private int id;
-      private String title;
-      private boolean completed;
+    private int userId;
+    private int id;
+    private String title;
+    private boolean completed;
+
+    public JsonPojo01(int userId, int id, String title, boolean completed) {
+        this.userId = userId;
+        this.id = id;
+        this.title = title;
+        this.completed = completed;
+    }
+
+    public JsonPojo01() {
+    }
 
     public int getUserId() {
         return userId;
@@ -48,17 +58,6 @@ public class JsonPojo01 {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-
-    public JsonPojo01(int userId, int id, String title, boolean completed) {
-        this.userId = userId;
-        this.id = id;
-        this.title = title;
-        this.completed = completed;
-    }
-
-    public JsonPojo01() {
-    }
-
 
     @Override
     public String toString() {
