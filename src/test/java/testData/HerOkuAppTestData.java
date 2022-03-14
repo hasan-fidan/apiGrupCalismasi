@@ -1,5 +1,7 @@
 package testData;
 
+import com.github.javafaker.Faker;
+
 import java.util.HashMap;
 
 public class HerOkuAppTestData {
@@ -15,7 +17,7 @@ public class HerOkuAppTestData {
              }
           }
           */
-
+static int sayi =10;
 
     public HashMap<String, Object> setupExpectedData() {
 
@@ -28,12 +30,12 @@ public class HerOkuAppTestData {
         HashMap<String,Object> expectedData = new HashMap<>();
 
             expectedData.put("bookingdates", bookingDates);
-            expectedData.put("firstname", "NO_WAR");
-            expectedData.put("lastname", "TURKEY");
+            expectedData.put("firstname", "BATCH_44_"+sayi);
+            expectedData.put("lastname", Faker.instance().artist().name());
             expectedData.put("totalprice", 1234567);
             expectedData.put("depositpaid", true);
 
-
+sayi++;
 
         return expectedData;
 

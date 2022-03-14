@@ -29,41 +29,26 @@ public class HerOkuPojo {
         return firstname;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
 
     public String getLastname() {
         return lastname;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
 
     public int getTotalprice() {
         return totalprice;
     }
 
-    public void setTotalprice(int totalprice) {
-        this.totalprice = totalprice;
-    }
 
     public boolean isDepositpaid() {
         return depositpaid;
     }
 
-    public void setDepositpaid(boolean depositpaid) {
-        this.depositpaid = depositpaid;
-    }
 
     public BookinDatesPojo getBookingdates() {
         return bookingdates;
     }
 
-    public void setBookingdates(BookinDatesPojo bookingdates) {
-        this.bookingdates = bookingdates;
-    }
 
 
     public HerOkuPojo(String firstname, String lastname, int totalprice, boolean depositpaid, BookinDatesPojo bookingdates) {

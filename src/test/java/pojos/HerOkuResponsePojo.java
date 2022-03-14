@@ -10,17 +10,11 @@ public class HerOkuResponsePojo {
         return bookingid;
     }
 
-    public void setBookingid(int bookingid) {
-        this.bookingid = bookingid;
-    }
 
     public HerOkuPojo getBooking() {
         return booking;
     }
 
-    public void setBooking(HerOkuPojo booking) {
-        this.booking = booking;
-    }
 
 
     public HerOkuResponsePojo(int bookingid, HerOkuPojo booking) {
@@ -40,3 +34,27 @@ public class HerOkuResponsePojo {
                 '}';
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

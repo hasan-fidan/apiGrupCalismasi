@@ -44,7 +44,7 @@ public class HerOkuPojo01 extends HerOkuBaseUrl {
 
         HerOkuPojo expectedData = new HerOkuPojo("Ali","Can",500,true,bookingdates);
 
-       // System.out.println("expectedData = " + expectedData);
+        System.out.println("expectedData = " + expectedData);
 
         Response response = RestAssured.given().
                             contentType(ContentType.JSON).
@@ -54,13 +54,13 @@ public class HerOkuPojo01 extends HerOkuBaseUrl {
                             post("/{parametre1}");
 
 
-        //response.prettyPrint();
+        response.prettyPrint();
 
 
         HerOkuResponsePojo actualData = response.as(HerOkuResponsePojo.class); // De- Serialization islemi
 
 
-       // System.out.println("actualData = " + actualData);
+       System.out.println("actualData = " + actualData);
 
 
         Assert.assertEquals(    expectedData.getFirstname(),    actualData.getBooking().getFirstname());
