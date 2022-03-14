@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import pojos.BookingDatesPojo;
 import pojos.HerOkuPojo01;
+import pojos.HerOkuSon;
 
 public class HerOkuPojo extends HerOkuAppBaseUrl {
     /**
@@ -42,22 +43,29 @@ public class HerOkuPojo extends HerOkuAppBaseUrl {
         Response response = RestAssured.given().contentType(ContentType.JSON).spec(spec).body(expectedData).when().post("/{parametre}");
 
 
-        response.prettyPrint();
+        //response.prettyPrint();
 
 
-        JsonPath jsonPath = response.jsonPath();
+//        JsonPath jsonPath = response.jsonPath();
+//
+//
+//        Assert.assertEquals(expectedData.getFirstname(),jsonPath.getString("booking.firstname"));
+//        Assert.assertEquals(expectedData.getLastname(),jsonPath.getString("booking.lastname"));
+//        Assert.assertEquals(expectedData.getTotalprice(),jsonPath.getInt("booking.totalprice"));
+//        Assert.assertEquals(expectedData.isDepositpaid(),jsonPath.getBoolean("booking.depositpaid"));
+//
+//        Assert.assertEquals(expectedData.getBookingdates().getCheckin(),jsonPath.getString("booking.bookingdates.checkin"));
+//        Assert.assertEquals(expectedData.getBookingdates().getCheckout(),jsonPath.getString("booking.bookingdates.checkout"));
 
+        HerOkuSon actualData = response.as(HerOkuSon.class);
+        System.out.println("actualData = " + actualData);
 
-        Assert.assertEquals(expectedData.getFirstname(),jsonPath.getString("booking.firstname"));
-        Assert.assertEquals(expectedData.getLastname(),jsonPath.getString("booking.lastname"));
-        Assert.assertEquals(expectedData.getTotalprice(),jsonPath.getInt("booking.totalprice"));
-        Assert.assertEquals(expectedData.isDepositpaid(),jsonPath.getBoolean("booking.depositpaid"));
-
-        Assert.assertEquals(expectedData.getBookingdates().getCheckin(),jsonPath.getString("booking.bookingdates.checkin"));
-        Assert.assertEquals(expectedData.getBookingdates().getCheckout(),jsonPath.getString("booking.bookingdates.checkout"));
-
-
-
+        Assert.assertEquals(expectedData.getBookingdates().getCheckin(),actualData.getBooking().getBookingdates().getCheckin());
+        Assert.assertEquals(expectedData.getBookingdates().getCheckout(),actualData.getBooking().getBookingdates().getCheckout());
+        Assert.assertEquals(expectedData.isDepositpaid(),actualData.getBooking().isDepositpaid());
+        Assert.assertEquals(expectedData.getTotalprice(),actualData.getBooking().getTotalprice());
+        Assert.assertEquals(expectedData.getLastname(),actualData.getBooking().getLastname());
+        Assert.assertEquals(expectedData.getFirstname(),actualData.getBooking().getFirstname());
 
 
 
