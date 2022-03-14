@@ -7,7 +7,7 @@
   "item": [
     {
       "name": "https://restful-booker.herokuapp.com/booking/",
-      "_postman_id": "7db711bf-02b3-4ddf-8e62-d91934b4f5d8",
+      "id": "7db711bf-02b3-4ddf-8e62-d91934b4f5d8",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
