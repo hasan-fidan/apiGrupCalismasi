@@ -1,22 +1,28 @@
 package pojos;
 
-public class HerOkuPojo01 {
-    //{ "firstname": "Ali",
-    //                  "lastname": "Can",
-    //                  "totalprice": 500,
-    //                  "depositpaid": true,
-    //                  "bookingdates": {
-    //                      "checkin": "2022-03-01",
-    //                      "checkout": "2022-03-11"
-    //                   }
-    //    }
+public class HerOkuPojo {
+
+    /**
+     * { "firstname": "Ali",
+     "lastname": "Can",
+     "totalprice": 500,
+     "depositpaid": true,
+     "bookingdates": {
+     "checkin": "2022-03-01",
+     "checkout": "2022-03-11"
+     }
+     }*/
 
 
-    private String firstname;
-    private String lastname;
-    private int totalprice;
-    private boolean depositpaid;
-    private BookingDatesPojo bookingdates;
+  private String firstname;
+  private String lastname;
+  private int totalprice;
+  private boolean depositpaid;
+  private BookinDatesPojo bookingdates;
+
+
+
+  /** getter ve setter methodlari */
 
 
     public String getFirstname() {
@@ -51,16 +57,16 @@ public class HerOkuPojo01 {
         this.depositpaid = depositpaid;
     }
 
-    public BookingDatesPojo getBookingdates() {
+    public BookinDatesPojo getBookingdates() {
         return bookingdates;
     }
 
-    public void setBookingdates(BookingDatesPojo bookingdates) {
+    public void setBookingdates(BookinDatesPojo bookingdates) {
         this.bookingdates = bookingdates;
     }
 
 
-    public HerOkuPojo01(String firstname, String lastname, int totalprice, boolean depositpaid, BookingDatesPojo bookingdates) {
+    public HerOkuPojo(String firstname, String lastname, int totalprice, boolean depositpaid, BookinDatesPojo bookingdates) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.totalprice = totalprice;
@@ -69,12 +75,12 @@ public class HerOkuPojo01 {
     }
 
 
-    public HerOkuPojo01() {
+    public HerOkuPojo() {
     }
 
     @Override
     public String toString() {
-        return "HerOkuPojo01{" +
+        return "HerOkuPojo{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", totalprice=" + totalprice +
@@ -82,4 +88,8 @@ public class HerOkuPojo01 {
                 ", bookingdates=" + bookingdates +
                 '}';
     }
+
+
+
+
 }

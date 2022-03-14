@@ -1,15 +1,15 @@
 package pojos;
 
-public class BookingDatesPojo {
+public class BookinDatesPojo {
 
-    //"bookingdates": {
-    //    //                      "checkin": "2022-03-01",
-    //    //                      "checkout": "2022-03-11"
-    //    //                   }
+    /** "checkin": "2022-03-01",
+     "checkout": "2022-03-11"  */
 
 
-    private String checkin;
-    private String checkout;
+
+
+   private String checkin;
+   private String checkout;
 
 
     public String getCheckin() {
@@ -28,17 +28,18 @@ public class BookingDatesPojo {
         this.checkout = checkout;
     }
 
-    public BookingDatesPojo(String checkin, String checkout) {
+    public BookinDatesPojo(String checkin, String checkout) {
         this.checkin = checkin;
         this.checkout = checkout;
     }
 
-    public BookingDatesPojo() {}
+    public BookinDatesPojo() {
+    }
 
 
     @Override
     public String toString() {
-        return "BookingDatesPojo{" +
+        return "BookinDatesPojo{" +
                 "checkin='" + checkin + '\'' +
                 ", checkout='" + checkout + '\'' +
                 '}';

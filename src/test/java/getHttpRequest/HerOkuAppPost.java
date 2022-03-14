@@ -1,11 +1,9 @@
 package getHttpRequest;
 
-import baseUrl.HerOkuAppBaseUrl;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import testData.HerOkuAppTestData;
 

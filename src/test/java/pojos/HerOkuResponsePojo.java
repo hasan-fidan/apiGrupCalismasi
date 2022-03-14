@@ -1,11 +1,10 @@
 package pojos;
 
-public class HerOkuSon {
+public class HerOkuResponsePojo {
 
 
     private int bookingid;
-    private HerOkuPojo01 booking;
-
+    private HerOkuPojo booking;
 
     public int getBookingid() {
         return bookingid;
@@ -15,25 +14,27 @@ public class HerOkuSon {
         this.bookingid = bookingid;
     }
 
-    public HerOkuPojo01 getBooking() {
+    public HerOkuPojo getBooking() {
         return booking;
     }
 
-    public void setBooking(HerOkuPojo01 booking) {
+    public void setBooking(HerOkuPojo booking) {
         this.booking = booking;
     }
 
-    public HerOkuSon(int bookingid, HerOkuPojo01 booking) {
+
+    public HerOkuResponsePojo(int bookingid, HerOkuPojo booking) {
         this.bookingid = bookingid;
         this.booking = booking;
     }
 
-    public HerOkuSon() {
+    public HerOkuResponsePojo() {
     }
+
 
     @Override
     public String toString() {
-        return "HerOkuSon{" +
+        return "HerOkuResponsePojo{" +
                 "bookingid=" + bookingid +
                 ", booking=" + booking +
                 '}';
