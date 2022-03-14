@@ -1,0 +1,31 @@
+{
+  "info": {
+    "_postman_id": "b6a3822a-18f1-457b-aa8e-e2e6ff5ca20e",
+    "name": "api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "https://restful-booker.herokuapp.com/booking/",
+      "id": "7db711bf-02b3-4ddf-8e62-d91934b4f5d8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"firstname\": \"Ali\",\r\n     \"lastname\": \"Can\",\r\n     \"totalprice\": 500,\r\n     \"depositpaid\": true,\r\n     \"bookingdates\": {\r\n     \"checkin\": \"2022-03-01\",\r\n     \"checkout\": \"2022-03-11\"\r\n     }\r\n     }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://restful-booker.herokuapp.com/booking/18"
+      },
+      "response": []
+    }
+  ]
+}
