@@ -3,12 +3,14 @@ package getHttpRequest;
 import baseUrl.DummyBaseUrl;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import pojos.DummyPojo01;
 import pojos.DummyResponsePojo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,7 +71,7 @@ public class DummyRequestPojo extends DummyBaseUrl {
 
         System.out.println("actualData = " + actualData);
 
-
+        Assert.assertEquals(200,response.statusCode());
         Assert.assertEquals(     expectedData.getEmployee_name(),       actualData.getData().get(10).getEmployee_name()    );
         Assert.assertEquals(     expectedData.getEmployee_salary(),     actualData.getData().get(10).getEmployee_salary()   );
         Assert.assertEquals(     expectedData.getEmployee_age(),        actualData.getData().get(10).getEmployee_age()   );
@@ -83,10 +85,22 @@ public class DummyRequestPojo extends DummyBaseUrl {
 
 
 
-        Assert.assertEquals(expectedData.getId(),              ( (Map)  ( (List) actualData02.get("data") ) .get(10)  ) .get("id")      );
-        Assert.assertEquals(expectedData.getEmployee_age(),     ((Map) ((List) actualData02.get("data")).get(10)) .get("employee_age")                                                         );
+
+        Assert.assertEquals(expectedData.getId(),              ( (Map)  ( (List) actualData02.get("data") ) .get(10)  ) .get("id") );
+        Assert.assertEquals(expectedData.getEmployee_age(),     ((Map) ((List) actualData02.get("data")).get(10)) .get("employee_age") );
 
 
+        JsonPath jsonPath = response.jsonPath();
+
+        List<Integer> arananYaslar = new ArrayList<>();
+            arananYaslar.add(19);  arananYaslar.add(21);   arananYaslar.add(40);
+        List<Integer> tumYaslar = jsonPath.getList("data.employee_age");
+
+
+        Assert.assertTrue(tumYaslar.containsAll(arananYaslar));
+        Assert.assertEquals(24,jsonPath.getList("data.id").size());
+        Assert.assertEquals(106450,jsonPath.getInt("data[-2].employee_salary"));
+        Assert.assertEquals("Airi Satou",jsonPath.getString("data[4].employee_name"));
 
 
     }
