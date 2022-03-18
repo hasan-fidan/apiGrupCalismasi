@@ -59,6 +59,7 @@ public class HerOkuPojo01 extends HerOkuBaseUrl {
 
 
 
+
         Assert.assertEquals(expectedData.getFirstname(), actualData.getBooking().getFirstname());
         Assert.assertEquals(expectedData.getLastname(), actualData.getBooking().getLastname());
         Assert.assertEquals(expectedData.getTotalprice(), actualData.getBooking().getTotalprice());
