@@ -52,7 +52,6 @@ public class HerOkuPojo01 extends HerOkuBaseUrl {
         response.prettyPrint();
         System.out.println("response.getHeaders().toString() = " + response.getHeaders().toString());
 
-
         HerOkuResponsePojo actualData = response.as(HerOkuResponsePojo.class); // De- Serialization islemi
 
 
