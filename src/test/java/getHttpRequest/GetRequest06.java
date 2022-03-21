@@ -8,6 +8,8 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class GetRequest06 extends DummyBaseUrl {
@@ -61,6 +63,10 @@ public class GetRequest06 extends DummyBaseUrl {
 
         System.out.println("isimler = " + isimler);
 
+
+        Collections.reverse(isimler);
+
+       // System.out.println("isimler = " + isimler);
 
     }
 
