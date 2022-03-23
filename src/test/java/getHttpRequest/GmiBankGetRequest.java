@@ -5,13 +5,12 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import junit.extensions.RepeatedTest;
 import org.junit.Assert;
 import org.junit.Test;
 import testData.GmiBankTestData;
 
-import java.lang.annotation.Repeatable;
 import java.util.HashMap;
+
 import static org.hamcrest.Matchers.equalTo;
 
 
