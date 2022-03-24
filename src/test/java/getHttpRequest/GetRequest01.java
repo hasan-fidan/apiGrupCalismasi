@@ -32,6 +32,7 @@ public class GetRequest01 extends DummyBaseUrl {
 
         Response response = given().contentType(ContentType.JSON).spec(spec).when().get("/{parametre1}/{parametre2}/{parametre3}");
 
+        //sdkjfbsdkjfbsdgfnjd
         response.prettyPrint();
 
         // headers kisminin testi
