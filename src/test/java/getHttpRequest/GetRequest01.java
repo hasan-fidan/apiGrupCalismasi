@@ -44,6 +44,8 @@ public class GetRequest01 extends DummyBaseUrl {
 
 
 
+
+
         //body kisminin testi.
 
         JsonPath jsonPath = response.jsonPath(); // burada sadece body icerigi var.
