@@ -58,7 +58,7 @@ public class DummyRequestPojo extends DummyBaseUrl {
         System.out.println("expectedData = " + expectedData);
 
         Response response = RestAssured.
-                given().
+                given()..
                 contentType(ContentType.JSON).
                 spec(spec).
                 when().
